@@ -1,0 +1,18 @@
+# Android
+*.apk
+!artifacts/*.apk
+*.aab
+build/
+local.properties
+
+# Gradle
+.gradle/
+gradle/gradle-daemon-jvm.properties
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# macOS / ZIP noise
+.DS_Store
+__MACOSX/

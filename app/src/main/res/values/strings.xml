@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Community</string>
+    <string name="community_title">Community</string>
+    <string name="retry">Retry</string>
+    <string name="error_no_connection_title">You’re offline</string>
+    <string name="error_no_connection_message">Check your internet connection, then try again.</string>
+    <string name="error_timeout_title">The connection timed out</string>
+    <string name="error_timeout_message">The server took too long to respond. Please try again.</string>
+    <string name="error_not_found_title">Community unavailable</string>
+    <string name="error_not_found_message">The requested community page could not be found.</string>
+    <string name="error_rate_limit_title">Too many requests</string>
+    <string name="error_rate_limit_message">Please wait a moment before trying again.</string>
+    <string name="error_server_title">Server problem</string>
+    <string name="error_server_message">The community service is unavailable right now. Please try again later.</string>
+    <string name="error_invalid_response_title">Couldn’t load the community</string>
+    <string name="error_invalid_response_message">The server returned an unexpected response. Please try again.</string>
+    <string name="error_unknown_title">Something went wrong</string>
+    <string name="error_unknown_message">We couldn’t load the community. Please try again.</string>
+    <string name="error_more_members_title">Couldn’t load more members</string>
+    <string name="error_save_reaction">Couldn’t save your reaction.</string>
+    <string name="new_member">NEW</string>
+    <string name="native_label">NATIVE</string>
+    <string name="learns_label">LEARNS</string>
+    <string name="profile_picture">%1$s profile picture</string>
+    <string name="like_member">Like %1$s</string>
+    <string name="unlike_member">Unlike %1$s</string>
+</resources>
