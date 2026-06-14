@@ -51,6 +51,18 @@ class CommunityRepositoryImplTest {
         assertTrue(store.ids.isEmpty())
     }
 
+    @Test
+    fun `liked state is restored after repository recreation`() = runTest {
+        val api = FakeCommunityApi(listOf(memberDto(7)))
+        val persistedStore = FakeLikedMembersStore()
+        CommunityRepositoryImpl(api, persistedStore).setLiked(7, true).getOrThrow()
+
+        val repositoryAfterRelaunch = CommunityRepositoryImpl(api, persistedStore)
+        val memberAfterRelaunch = repositoryAfterRelaunch.getCommunityPage(1).getOrThrow().members.single()
+
+        assertTrue(memberAfterRelaunch.isLiked)
+    }
+
     private fun memberDto(id: Int) = CommunityMemberDto(
         id = id,
         topic = "Topic",
