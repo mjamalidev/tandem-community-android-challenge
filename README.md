@@ -4,6 +4,10 @@ An Android application built for the Tandem Android engineering hiring challenge
 
 The app fetches and displays members of a language learning community from a remote paginated API. Users can like or unlike community members by tapping on their cards, and the liked state is persisted locally so it remains available after relaunching the app.
 
+## Screenshot
+
+![Community screen](screenshots/screenshot.jpg)
+
 ## Features
 
 * Fetches community members from the Tandem remote API
