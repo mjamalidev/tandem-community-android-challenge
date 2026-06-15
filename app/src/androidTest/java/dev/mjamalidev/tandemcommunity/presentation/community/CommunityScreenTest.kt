@@ -1,5 +1,8 @@
 package dev.mjamalidev.tandemcommunity.presentation.community
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.test.assertContentDescriptionEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -44,6 +47,35 @@ class CommunityScreenTest {
         composeRule.onNodeWithTag(CommunityTestTags.member(1)).performClick()
 
         assertEquals(1, clickedMemberId)
+    }
+
+    @Test
+    fun clickingMemberChangesLikeIconState() {
+        composeRule.setContent {
+            var member by mutableStateOf(member())
+            CommunityTheme(darkTheme = false) {
+                CommunityScreen(
+                    uiState = CommunityUiState(
+                        members = listOf(member),
+                        isInitialLoading = false,
+                        canLoadMore = false,
+                    ),
+                    onLoadMore = {},
+                    onRetry = {},
+                    onMemberClick = { member = member.copy(isLiked = !member.isLiked) },
+                )
+            }
+        }
+
+        val likeIcon = composeRule.onNodeWithTag(
+            CommunityTestTags.like(1),
+            useUnmergedTree = true,
+        )
+        likeIcon.assertContentDescriptionEquals("Like Alex")
+
+        composeRule.onNodeWithTag(CommunityTestTags.member(1)).performClick()
+
+        likeIcon.assertContentDescriptionEquals("Unlike Alex")
     }
 
     @Test

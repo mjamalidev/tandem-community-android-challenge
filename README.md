@@ -67,7 +67,8 @@ app/
      │           │   ├── repository/
      │           │   └── usecase/
      │           ├── presentation/
-     │           │   ├── community/
+     │           │   └── community/
+     │           ├── ui/
      │           │   └── theme/
      │           └── di/
      ├── test/
